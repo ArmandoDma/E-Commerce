@@ -64,19 +64,20 @@ export default function ProductDetail() {
             <p className="text-xl text-gray-700 mb-4">{product.price}</p>
             <p className="text-gray-600">{product.description}</p>
             <button
-                onClick={() =>
-                    addToCart({
-                        id: product.id,
-                        name: product.name,
-                        price: parseFloat(product.price.replace("$", "")),
-                        image: product.image,
-                        quantity: 1,
-                    })
-                }
-                className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800"
-            >
-                Add to Cart 🛒
-            </button>
+  onClick={() => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: parseFloat(product.price.replace("$", "")),
+      image: product.image,
+      quantity: 1,
+    });
+    alert("Producto agregado al carrito 🛒");
+  }}
+  className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800"
+>
+  Add to Cart
+</button>
         </section>
     );
 }
